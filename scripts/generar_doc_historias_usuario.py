@@ -17,9 +17,24 @@ def set_cell_margins(cell, top=80, bottom=80, left=120, right=120):
     tcMar = parse_xml(f'<w:tcMar {nsdecls("w")}><w:top w:w="{top}" w:type="dxa"/><w:bottom w:w="{bottom}" w:type="dxa"/><w:left w:w="{left}" w:type="dxa"/><w:right w:w="{right}" w:type="dxa"/></w:tcMar>')
     tcPr.append(tcMar)
 
+def set_table_borders(table, color="D1D5DB", sz="4", val="single"):
+    tblPr = table._tbl.tblPr
+    tblBorders = parse_xml(
+        f'<w:tblBorders {nsdecls("w")}>'
+        f'  <w:top w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'  <w:bottom w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'  <w:left w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'  <w:right w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'  <w:insideH w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'  <w:insideV w:val="{val}" w:sz="{sz}" w:space="0" w:color="{color}"/>'
+        f'</w:tblBorders>'
+    )
+    tblPr.append(tblBorders)
+
 def add_hu_card(doc, hu):
+    # Título principal de la tarjeta exactamente como en la imagen
     title_p = doc.add_paragraph()
-    title_p.paragraph_format.space_before = Pt(14)
+    title_p.paragraph_format.space_before = Pt(16)
     title_p.paragraph_format.space_after = Pt(4)
     title_p.paragraph_format.keep_with_next = True
     
@@ -27,27 +42,21 @@ def add_hu_card(doc, hu):
     r_hu.font.name = "Arial"
     r_hu.font.size = Pt(13)
     r_hu.font.bold = True
-    r_hu.font.color.rgb = RGBColor(15, 23, 42)
+    r_hu.font.color.rgb = RGBColor(0, 0, 0)
 
-    r_estado = title_p.add_run(f"   [{hu['estado']}]")
-    r_estado.font.name = "Arial"
-    r_estado.font.size = Pt(10)
-    r_estado.font.bold = True
-    if "IMPLEMENTADA" in hu['estado']:
-        r_estado.font.color.rgb = RGBColor(22, 101, 52)  # Verde
-    else:
-        r_estado.font.color.rgb = RGBColor(194, 65, 12)  # Naranja
-
-    table = doc.add_table(rows=5, cols=2)
+    # Tabla con 6 filas (incluye el estado para indicar si ya está hecha o falta)
+    table = doc.add_table(rows=6, cols=2)
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.autofit = False
+    set_table_borders(table, color="D1D5DB", sz="4", val="single")
 
     meta_rows = [
         ("Título", f"{hu['id']} | {hu['nombre']} | {hu['sp']} SP | {hu['prioridad'].upper()}"),
         ("Story Points", str(hu['sp'])),
         ("Prioridad", hu['prioridad']),
         ("Etiquetas", hu['etiquetas']),
-        ("Dependencias", hu['dependencias'])
+        ("Dependencias", hu['dependencias']),
+        ("Estado", hu['estado'])
     ]
 
     for idx, (lbl, val) in enumerate(meta_rows):
@@ -70,12 +79,19 @@ def add_hu_card(doc, hu):
         r_val = p_val.add_run(val)
         r_val.font.name = "Arial"
         r_val.font.size = Pt(9.5)
-        r_val.font.color.rgb = RGBColor(15, 23, 42)
+        if lbl == "Estado":
+            r_val.bold = True
+            if "IMPLEMENTADA" in val or "Hecha" in val:
+                r_val.font.color.rgb = RGBColor(22, 101, 52)
+            else:
+                r_val.font.color.rgb = RGBColor(194, 65, 12)
+        else:
+            r_val.font.color.rgb = RGBColor(15, 23, 42)
 
         set_cell_background(cell_lbl, "F1F5F9")
         set_cell_background(cell_val, "FFFFFF")
-        set_cell_margins(cell_lbl, 60, 60, 100, 100)
-        set_cell_margins(cell_val, 60, 60, 100, 100)
+        set_cell_margins(cell_lbl, 50, 50, 90, 90)
+        set_cell_margins(cell_val, 50, 50, 90, 90)
 
     p_desc_hdr = doc.add_paragraph()
     p_desc_hdr.paragraph_format.space_before = Pt(8)
