@@ -1,0 +1,65 @@
+.salon-order {min-height:100vh;background:#f3f6f2;color:#063f30;padding:20px}
+.salon-order>header {display:flex;align-items:center;justify-content:space-between;gap:16px;background:#064c36;color:white;padding:20px;border-radius:14px;margin-bottom:20px}
+.salon-order h1 {font-size:1.6rem;margin:0}
+.salon-order button {font:inherit;border:1px solid #c8ded0;background:#eff7f2;color:#064c36;border-radius:8px;padding:10px 14px;cursor:pointer}
+.salon-order button:disabled {opacity:.45;cursor:default}
+.order-workspace {display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:20px;align-items:start}
+.order-catalog,.order-cart {padding:24px;background:white;border-radius:14px;min-width:0}
+.order-catalog nav {display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 24px}
+.salon-order button[aria-pressed=true],.salon-order .primary {background:#087c50;color:white;border-color:#087c50}
+.order-search {display:grid;gap:8px;margin-bottom:24px}
+.salon-order input,.salon-order textarea {font:inherit;padding:12px;border:1px solid #bed5c7;border-radius:8px;width:100%;box-sizing:border-box}
+.order-products {display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.order-products button {text-align:left;display:flex;flex-direction:column;justify-content:space-between;gap:18px;min-height:110px;background:white;padding:18px}
+.order-products button:hover {border-color:#087c50;background:#f2faf5}
+.order-products span {font-weight:700;color:#087c50}
+.order-cart {position:sticky;top:16px;max-height:calc(100vh - 32px);display:flex;flex-direction:column}
+.order-cart h2 {margin:0}
+.order-lines {overflow:auto;min-height:80px;flex:1}
+.order-lines article {border-top:1px solid #dce9e0;padding:18px 0}
+.order-line-card {border-bottom:1px solid #dce9e0;padding:8px 0}
+.salon-order .order-line-select {display:flex;flex-direction:column;gap:8px;text-align:left;width:100%;margin-bottom:10px;padding:14px;background:white;border:1px solid #dce9e0}
+.salon-order .order-line-select.is-sent {background:#f3f5f4}
+.salon-order .order-line-select[aria-pressed=true] {background:#e1f4e9;color:#063f30;border:2px solid #087c50;padding:13px}
+.order-line-select .order-line-heading {width:100%}
+.order-line-status {font-size:.75rem;color:#58776a;font-weight:700}
+.order-selection-actions {padding:14px 0 8px;border-top:1px solid #dce9e0}
+.order-line-heading,.order-total {display:flex;justify-content:space-between;gap:14px}
+.order-line-heading b {white-space:nowrap}
+.order-comment {white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f7f3;padding:10px;border-radius:8px;font-size:.9rem}
+.order-line-actions {display:flex;gap:8px}
+.order-line-actions button {font-size:.85rem;padding:8px}
+.order-refills {display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.order-refills button {padding:7px 10px;font-size:.85rem;background:#e3f4ea}
+.order-promotion-editor {width:min(680px,94vw)}
+.order-refill-editor {width:min(520px,94vw)}
+.order-promo-included {margin:0;padding:8px 0;color:#58776a;font-size:.9rem}
+.order-promo-group {display:grid;gap:8px;padding:12px 0;border-top:1px solid #dce9e0}
+.order-promo-group h3 {margin:0;font-size:1rem}
+.order-promo-selection {padding:10px;border-left:3px solid #087c50;background:#f4f8f5}
+.order-promo-selection>header {display:flex;align-items:center;justify-content:space-between;gap:12px}
+.order-promo-selection .order-option {margin-top:8px}
+.order-promo-group small {color:#58776a}
+.order-total {border-top:2px solid #dce9e0;padding:20px 0;font-size:1.15rem}
+.order-submit {display:grid;gap:10px}
+.order-alert {color:#a32222;background:#fff0f0;padding:14px;border-radius:8px}
+.order-message {background:#e1f5e8;padding:14px;border-radius:8px}
+.order-editor {border:0;border-radius:16px;padding:26px;width:min(520px,90vw);max-height:85vh;color:#063f30;box-sizing:border-box}
+.order-editor::backdrop {background:#002d2480}
+.order-editor form {display:grid;gap:18px}
+.order-editor h2,.order-editor p {margin:0}
+.order-editor label {display:grid;gap:8px}
+.order-editor fieldset {border:1px solid #dce9e0;border-radius:10px;padding:16px}
+.order-option {display:flex;align-items:center;gap:12px;margin-top:14px}
+.order-option>span:first-child {flex:1}
+.order-editor textarea {min-height:90px;resize:vertical}
+.order-editor footer {display:flex;justify-content:flex-end;gap:10px}
+@media(max-width:850px) {.order-workspace {grid-template-columns:1fr}.order-cart {position:static;max-height:none}.salon-order {padding:12px}.salon-order>header {flex-wrap:wrap}.order-catalog,.order-cart {padding:18px}}
+
+.salon-order{height:100dvh;min-height:0;box-sizing:border-box;overflow:hidden;display:flex;flex-direction:column;padding:0;background:#edf3ef}
+.salon-order>header{flex:none;border-radius:0;margin:0;padding:14px 24px;background:linear-gradient(110deg,#043e2f,#08704c)}
+.order-workspace{flex:1;min-height:0;padding:14px;grid-template-columns:minmax(0,1fr) 370px;align-items:stretch}
+.order-catalog{overflow:auto;padding:18px}.order-cart{position:static;min-height:0;max-height:none;padding:18px}.order-lines{min-height:0}.order-cart>p{margin:10px 0}.order-total{padding:14px 0 0}.order-alert,.order-message{flex:none;margin:8px 14px;padding:8px}.order-alert p{margin:0}.order-alert button{padding:4px}.order-products{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.order-products button{min-height:90px}
+.salon-order .salon-actionbar .salon-exit,.salon-order .salon-actionbar .salon-delete{background:#873b40;color:white}.salon-order .salon-actionbar .salon-send{background:#14a767;color:white}
+.salon-order .salon-actionbar .salon-pay{background:#d9b777;color:#173d30;border-color:#eed4a7;font-weight:800}
+@media(max-width:850px){.order-workspace{grid-template-columns:minmax(0,1fr) minmax(190px,40%);gap:8px;padding:8px}.order-catalog,.order-cart{padding:10px}.order-products{grid-template-columns:1fr}.order-catalog nav{gap:4px;margin:10px 0}.order-catalog nav button{padding:6px;font-size:.8rem}.order-line-heading{flex-wrap:wrap}.order-cart h2{font-size:1.1rem}.salon-order>header{padding:12px}.salon-order>header h1{font-size:1.1rem}}

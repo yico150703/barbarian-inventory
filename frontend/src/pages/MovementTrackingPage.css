@@ -1,0 +1,19 @@
+.movement-tracking { color:#073f30; display:grid; gap:20px; }
+.movement-tracking header,.movement-tracking article {background:white;border-radius:16px;padding:24px;overflow:auto}
+.movement-tracking button,.movement-tracking header a {display:inline-block;border:1px solid #b9d4c8;background:#edf7f2;color:#074b35;border-radius:8px;padding:10px 16px;margin:4px;cursor:pointer;font:inherit;font-weight:600}
+.movement-tracking button[aria-pressed=true] {background:#087d50;color:white}
+.movement-tracking button:disabled {opacity:.5;cursor:wait}
+.movement-tracking table {width:100%;border-collapse:collapse;margin:18px 0}
+.movement-tracking th,.movement-tracking td {padding:12px;text-align:left;border-bottom:1px solid #dce7e1}
+.movement-tracking [role=alert] {color:#b42318}
+.tracking-overlay {position:fixed;inset:0;background:#002d2480;display:grid;place-items:center;z-index:1200}
+.tracking-overlay section {background:white;border-radius:16px;padding:24px;max-height:85vh;overflow:auto;width:min(600px,90vw)}
+.tracking-overlay label {display:block;margin:14px 0}
+.tracking-overlay input {display:block;padding:10px;border:1px solid #b9d4c8;border-radius:6px;width:95%;margin-top:6px}
+@media print {
+ body:has([data-guia-imprimir]) {background:white}
+ .sidebar,.topbar,.movement-tracking header,.movement-tracking nav,.movement-tracking button,.tracking-overlay {display:none!important}
+ .movement-tracking article {break-inside:avoid}
+ body[data-guia-imprimir] .movement-tracking article {display:none}
+ body[data-guia-imprimir] .movement-tracking article.printing {display:block}
+}

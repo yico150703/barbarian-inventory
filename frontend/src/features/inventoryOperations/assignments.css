@@ -1,0 +1,14 @@
+.io-assignment-dialog{width:min(920px,94vw);max-height:90dvh;overflow:auto;border:1px solid #c8dfd2;border-radius:20px;padding:26px;color:#093d30;background:#fff;box-shadow:0 24px 80px #002c2940}
+.io-assignment-dialog::backdrop{background:#042e27a6}
+.io-assignment-dialog h2{margin-top:0}
+.io-assignment-dialog p{color:#527264;line-height:1.6}
+.io-assignment-dialog fieldset{border:0;padding:0;min-width:0}
+.io-assignment-dialog footer{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap;padding-top:18px;border-top:1px solid #dce7df}
+.io-assignment-dialog footer span{margin-right:auto}
+.io-assignment-products{max-height:38dvh;overflow:auto;border:1px solid #dce7df;border-radius:10px;margin:14px 0}
+.io-bulk-check{display:flex;gap:12px;align-items:center;padding:12px;cursor:pointer}
+.io-bulk-check input[type=checkbox]{width:19px;height:19px;flex:none;accent-color:#087b50}
+.io-bulk-check small{display:block;color:#527264;margin-top:5px}
+.io-assignment-products .io-bulk-check+.io-bulk-check{border-top:1px solid #e4ede7}
+.io-assignment-products .io-bulk-check:has(input:checked){background:#edf8f1}
+@media(max-width:600px){.io-assignment-dialog{padding:16px}.io-assignment-dialog footer button{flex:1}.io-assignment-dialog footer span{width:100%}}

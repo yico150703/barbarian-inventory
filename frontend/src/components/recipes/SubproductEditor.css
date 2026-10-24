@@ -1,0 +1,7 @@
+.subproduct-dialog { border: 0; padding: 0; border-radius: 20px; width: min(1000px, calc(100% - 32px)); max-height: calc(100dvh - 32px); }
+.subproduct-dialog::backdrop { background: #001b12b3; }
+.subproduct-dialog .recipe-editor { width: 100%; }
+.production-header-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.production-edit-button { border: 1px solid #bed3c7; border-radius: 8px; padding: 8px 12px; background: #f1f8f4; color: #075537; font: inherit; font-weight: 700; cursor: pointer; }
+.production-feedback { padding: 12px 18px; border-radius: 10px; background: #e0f7ea; color: #075537; }
+.production-feedback--error { background: #fff0f0; color: #a32727; }

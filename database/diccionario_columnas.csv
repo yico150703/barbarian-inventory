@@ -1,0 +1,183 @@
+tabla,posicion,columna,tipo_dato,longitud,precision,escala,permite_null,valor_predeterminado
+actividad_usuario,1,id_actividad_usuario,bigint,,64,0,NO,
+actividad_usuario,2,id_usuario,integer,,32,0,NO,
+actividad_usuario,3,modulo,character varying,60,,,NO,
+actividad_usuario,4,accion,character varying,40,,,NO,
+actividad_usuario,5,id_registro_afectado,integer,,32,0,YES,
+actividad_usuario,6,descripcion,character varying,500,,,NO,
+actividad_usuario,7,fecha_actividad,timestamp without time zone,,,,NO,CURRENT_TIMESTAMP
+actividad_usuario,8,estado_registro,smallint,,16,0,NO,1
+categoria_carta,1,id_categoria_carta,integer,,32,0,NO,
+categoria_carta,2,nombre,character varying,100,,,NO,
+categoria_carta,3,prefijo,character varying,5,,,NO,
+categoria_carta,4,siguiente_numero,integer,,32,0,NO,1
+categoria_carta,5,activo,boolean,,,,NO,true
+categoria_producto,1,id_categoria,integer,,32,0,NO,
+categoria_producto,2,nombre,character varying,100,,,NO,
+categoria_producto,3,prefijo,character varying,5,,,NO,
+categoria_producto,4,siguiente_numero,integer,,32,0,NO,1
+categoria_producto,5,activo,boolean,,,,NO,true
+factura_recepcion,1,id_factura_recepcion,integer,,32,0,NO,
+factura_recepcion,2,id_orden_compra,integer,,32,0,NO,
+factura_recepcion,3,id_proveedor,integer,,32,0,NO,
+factura_recepcion,4,numero_factura,character varying,40,,,NO,
+factura_recepcion,5,fecha_recepcion,date,,,,NO,
+factura_recepcion,6,usuario_recepcion,integer,,32,0,NO,
+factura_recepcion_detalle,1,id_factura_recepcion_detalle,integer,,32,0,NO,
+factura_recepcion_detalle,2,id_factura_recepcion,integer,,32,0,NO,
+factura_recepcion_detalle,3,id_producto,integer,,32,0,NO,
+factura_recepcion_detalle,4,cantidad_recibida,numeric,,12,3,NO,
+grupo_salsa,1,id_grupo_salsa,integer,,32,0,NO,
+grupo_salsa,2,id_presentacion_venta,integer,,32,0,NO,
+grupo_salsa,3,cantidad_maxima,smallint,,16,0,NO,
+grupo_salsa,4,permite_repetir,boolean,,,,NO,false
+grupo_salsa,5,activo,boolean,,,,NO,true
+grupo_salsa_opcion,1,id_grupo_salsa_opcion,integer,,32,0,NO,
+grupo_salsa_opcion,2,id_grupo_salsa,integer,,32,0,NO,
+grupo_salsa_opcion,3,id_producto,integer,,32,0,NO,
+grupo_salsa_opcion,4,cantidad,numeric,,12,3,NO,
+grupo_salsa_opcion,5,unidad,character varying,10,,,NO,
+grupo_salsa_opcion,6,activo,boolean,,,,NO,true
+inventario_cierre,1,id_inventario_cierre,integer,,32,0,NO,
+inventario_cierre,2,fecha_inventario,date,,,,NO,
+inventario_cierre,3,estado_inventario,character varying,20,,,NO,'BORRADOR'::character varying
+inventario_cierre,4,usuario_registro,integer,,32,0,NO,
+inventario_cierre,5,fecha_registro,date,,,,YES,
+inventario_cierre,6,usuario_revision,integer,,32,0,YES,
+inventario_cierre,7,motivo_revision,character varying,150,,,YES,
+inventario_cierre,8,observacion,character varying,500,,,YES,
+inventario_cierre_detalle,1,id_inventario_cierre_detalle,integer,,32,0,NO,
+inventario_cierre_detalle,2,id_inventario_cierre,integer,,32,0,NO,
+inventario_cierre_detalle,3,id_producto,integer,,32,0,NO,
+inventario_cierre_detalle,4,stock_contado,numeric,,12,3,NO,
+item_carta,1,id_item_carta,integer,,32,0,NO,
+item_carta,2,codigo,character varying,10,,,NO,
+item_carta,3,nombre,character varying,200,,,NO,
+item_carta,4,id_categoria_carta,integer,,32,0,NO,
+item_carta,5,tipo,character varying,15,,,NO,
+item_carta,6,activo,boolean,,,,NO,true
+menaje,1,id_menaje,integer,,32,0,NO,
+menaje,2,nombre,character varying,100,,,NO,
+menaje,3,activo,boolean,,,,NO,true
+movimiento_inventario,1,id_movimiento_inventario,integer,,32,0,NO,
+movimiento_inventario,2,codigo,character varying,20,,,NO,
+movimiento_inventario,3,tipo_movimiento,character varying,10,,,NO,
+movimiento_inventario,4,motivo_movimiento,character varying,30,,,NO,
+movimiento_inventario,5,fecha_movimiento,date,,,,NO,
+movimiento_inventario,6,usuario_registro,integer,,32,0,NO,
+movimiento_inventario,7,local_relacionado,character varying,150,,,YES,
+movimiento_inventario,8,id_proveedor,integer,,32,0,YES,
+movimiento_inventario,9,observacion,character varying,500,,,YES,
+movimiento_inventario_detalle,1,id_movimiento_inventario_detalle,integer,,32,0,NO,
+movimiento_inventario_detalle,2,id_movimiento_inventario,integer,,32,0,NO,
+movimiento_inventario_detalle,3,id_producto,integer,,32,0,NO,
+movimiento_inventario_detalle,4,cantidad,numeric,,12,3,NO,
+opcion_menu,1,id_opcion_menu,integer,,32,0,NO,
+opcion_menu,2,nombre,character varying,100,,,NO,
+opcion_menu,3,url_menu,character varying,180,,,NO,
+opcion_menu,4,descripcion,character varying,500,,,NO,
+opcion_menu,5,id_padre,integer,,32,0,YES,
+opcion_menu,6,estado_registro,smallint,,16,0,NO,1
+orden_compra,1,id_orden_compra,integer,,32,0,NO,
+orden_compra,2,codigo,character varying,20,,,NO,
+orden_compra,3,estado_orden_compra,character varying,25,,,NO,'BORRADOR'::character varying
+orden_compra,4,usuario_registro,integer,,32,0,NO,
+orden_compra,5,fecha_registro,date,,,,YES,
+orden_compra_detalle,1,id_orden_compra_detalle,integer,,32,0,NO,
+orden_compra_detalle,2,id_orden_compra,integer,,32,0,NO,
+orden_compra_detalle,3,id_producto,integer,,32,0,NO,
+orden_compra_detalle,4,cantidad_solicitada,numeric,,12,3,NO,
+perfil_gestion_usuario,1,id_perfil_gestor,integer,,32,0,NO,
+perfil_gestion_usuario,2,id_perfil_objetivo,integer,,32,0,NO,
+perfil_gestion_usuario,3,puede_crear,boolean,,,,NO,false
+perfil_gestion_usuario,4,puede_editar,boolean,,,,NO,false
+perfil_gestion_usuario,5,estado_registro,smallint,,16,0,NO,1
+perfil_opcion_menu,1,id_perfil,integer,,32,0,NO,
+perfil_opcion_menu,2,id_opcion_menu,integer,,32,0,NO,
+perfil_opcion_menu,3,puede_consultar,boolean,,,,NO,false
+perfil_opcion_menu,4,puede_crear,boolean,,,,NO,false
+perfil_opcion_menu,5,puede_editar,boolean,,,,NO,false
+perfil_opcion_menu,6,puede_revisar,boolean,,,,NO,false
+perfil_opcion_menu,7,puede_cerrar,boolean,,,,NO,false
+perfil_opcion_menu,8,orden,smallint,,16,0,NO,
+perfil_opcion_menu,9,estado_registro,smallint,,16,0,NO,1
+perfiles,1,id_perfil,integer,,32,0,NO,
+perfiles,2,nombre,character varying,60,,,NO,
+perfiles,3,descripcion,character varying,500,,,NO,
+perfiles,4,estado_registro,smallint,,16,0,NO,1
+presentacion_venta,1,id_presentacion_venta,integer,,32,0,NO,
+presentacion_venta,2,id_item_carta,integer,,32,0,NO,
+presentacion_venta,3,id_menaje,integer,,32,0,NO,
+presentacion_venta,4,contenido,numeric,,12,3,NO,
+presentacion_venta,5,unidad,character varying,10,,,NO,
+presentacion_venta,6,precio,numeric,,10,2,NO,
+presentacion_venta,7,activo,boolean,,,,NO,true
+producto,1,id_producto,integer,,32,0,NO,
+producto,2,codigo,character varying,10,,,NO,
+producto,3,nombre,character varying,200,,,NO,
+producto,4,id_categoria,integer,,32,0,NO,
+producto,5,id_proveedor,integer,,32,0,NO,
+producto,6,unidad,character varying,10,,,NO,
+producto,7,stock_minimo,numeric,,12,3,NO,0
+producto,8,presentacion,numeric,,12,3,NO,1
+producto,9,activo,boolean,,,,NO,true
+promocion,1,id_promocion,integer,,32,0,NO,
+promocion,2,codigo,character varying,10,,,NO,
+promocion,3,nombre,character varying,150,,,NO,
+promocion,4,precio,numeric,,10,2,NO,
+promocion,5,hora_inicio,time without time zone,,,,YES,
+promocion,6,hora_fin,time without time zone,,,,YES,
+promocion,7,activo,boolean,,,,NO,true
+promocion_grupo,1,id_promocion_grupo,integer,,32,0,NO,
+promocion_grupo,2,id_promocion,integer,,32,0,NO,
+promocion_grupo,3,cantidad_elegir,smallint,,16,0,NO,
+promocion_grupo,4,permite_repetir,boolean,,,,NO,false
+promocion_opcion,1,id_promocion_opcion,integer,,32,0,NO,
+promocion_opcion,2,id_promocion_grupo,integer,,32,0,NO,
+promocion_opcion,3,id_presentacion_venta,integer,,32,0,NO,
+proveedor,1,id_proveedor,integer,,32,0,NO,
+proveedor,2,nombre,character varying,200,,,NO,
+proveedor,3,activo,boolean,,,,NO,true
+receta,1,id_receta,integer,,32,0,NO,
+receta,2,id_presentacion_venta,integer,,32,0,NO,
+receta,3,instrucciones,text,,,,NO,'Pendiente de registrar.'::text
+receta,4,activo,boolean,,,,NO,true
+receta_detalle,1,id_receta_detalle,integer,,32,0,NO,
+receta_detalle,2,id_receta,integer,,32,0,NO,
+receta_detalle,3,tipo_componente,character varying,15,,,NO,
+receta_detalle,4,id_producto,integer,,32,0,YES,
+receta_detalle,5,id_subproducto,integer,,32,0,YES,
+receta_detalle,6,cantidad,numeric,,12,3,NO,
+receta_detalle,7,unidad,character varying,10,,,NO,
+subproducto,1,id_subproducto,integer,,32,0,NO,
+subproducto,2,codigo,character varying,10,,,NO,
+subproducto,3,nombre,character varying,150,,,NO,
+subproducto,4,rendimiento,numeric,,12,3,NO,1
+subproducto,5,unidad,character varying,10,,,NO,
+subproducto,6,instruccion,text,,,,YES,
+subproducto,7,activo,boolean,,,,NO,true
+subproducto_detalle,1,id_subproducto_detalle,integer,,32,0,NO,
+subproducto_detalle,2,id_subproducto,integer,,32,0,NO,
+subproducto_detalle,3,id_producto,integer,,32,0,NO,
+subproducto_detalle,4,cantidad,numeric,,12,3,NO,
+subproducto_detalle,5,unidad,character varying,10,,,NO,
+usuario,1,id_usuario,integer,,32,0,NO,
+usuario,2,dni,character varying,8,,,NO,
+usuario,3,nombres,character varying,100,,,NO,
+usuario,4,apellido_paterno,character varying,80,,,NO,
+usuario,5,apellido_materno,character varying,80,,,YES,
+usuario,6,celular,character varying,15,,,NO,
+usuario,7,correo_electronico,character varying,150,,,NO,
+usuario,8,clave,character varying,255,,,NO,
+usuario,9,usuario_creacion,integer,,32,0,YES,
+usuario,10,fecha_creacion,date,,,,NO,CURRENT_DATE
+usuario,11,usuario_modificacion,integer,,32,0,YES,
+usuario,12,fecha_modificacion,date,,,,YES,
+usuario,13,estado_registro,smallint,,16,0,NO,1
+usuario_perfiles,1,id_usuario,integer,,32,0,NO,
+usuario_perfiles,2,id_perfil,integer,,32,0,NO,
+usuario_perfiles,3,usuario_asignacion,integer,,32,0,NO,
+usuario_perfiles,4,fecha_asignacion,date,,,,NO,CURRENT_DATE
+usuario_perfiles,5,usuario_modificacion,integer,,32,0,YES,
+usuario_perfiles,6,fecha_modificacion,date,,,,YES,
+usuario_perfiles,7,estado_registro,smallint,,16,0,NO,1

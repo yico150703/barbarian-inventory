@@ -1,0 +1,16 @@
+.activity-page {display:grid;gap:20px;color:#063f30}
+.activity-page header {padding:32px;border-radius:22px;background:linear-gradient(110deg,#043d2e,#087647);color:white}
+.activity-page h1 {font-size:2.3rem;margin:12px 0}
+.activity-page form {display:flex;flex-wrap:wrap;gap:14px;align-items:end;background:white;border-radius:14px;padding:20px}
+.activity-page label {display:grid;gap:6px;font-weight:600}
+.activity-page input,.activity-page select {padding:10px;border:1px solid #bed4ca;border-radius:8px;max-width:100%;font:inherit}
+.activity-page button {padding:10px 14px;background:#edf7f1;color:#06472f;border:1px solid #bfd6c9;border-radius:8px;font:inherit;cursor:pointer}
+.activity-page button:disabled {opacity:.45;cursor:default}
+.activity-table {overflow:auto;background:white;border-radius:14px}
+.activity-page table {border-collapse:collapse;width:100%;text-align:left}
+.activity-page th,.activity-page td {padding:13px;border-bottom:1px solid #e0eae4;vertical-align:top}
+.activity-page th {background:#edf5f1}
+.activity-detail {padding:16px;background:#f3faf6}
+.activity-detail pre {white-space:pre-wrap;overflow-wrap:anywhere;max-width:450px;font:inherit;margin:0}
+.activity-page footer {display:flex;gap:18px;align-items:center}
+.activity-page [role=alert] {color:#b42318}

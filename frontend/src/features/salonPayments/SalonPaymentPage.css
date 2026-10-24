@@ -1,0 +1,18 @@
+.salon-payment{height:100dvh;display:flex;flex-direction:column;background:#edf3ef;color:#103f31;overflow:hidden}
+.salon-payment>header{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(110deg,#043e2f,#08704c);color:white;padding:18px 28px;flex:none}
+.salon-payment h1{font-size:1.5rem;margin:4px 0 0}.salon-payment header span{font-size:.75rem;letter-spacing:.12em}
+.payment-workspace{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,1fr);gap:24px;max-width:1200px;width:100%;margin:0 auto;padding:24px;box-sizing:border-box;min-height:0;flex:1;overflow:auto;align-items:start}
+.payment-workspace form{display:grid;gap:24px}.salon-payment fieldset,.payment-account{border:1px solid #d8e5dc;background:white;border-radius:16px;padding:24px;min-width:0}
+.salon-payment legend{font-size:1.15rem;font-weight:700;padding:0 8px}.payment-choices{display:flex;gap:10px;flex-wrap:wrap}
+.salon-payment button{font:inherit;cursor:pointer;border-radius:9px;border:1px solid #bcd4c5;background:#f1f7f3;color:#094d35;padding:14px 20px;font-weight:600}
+.payment-choices button{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;min-height:64px}
+.salon-payment button[aria-pressed=true],.salon-payment .payment-primary{color:white;background:#087b50;border-color:#087b50}
+.salon-payment button:disabled{opacity:.45;cursor:default}.salon-payment button:focus-visible,.salon-payment input:focus-visible{outline:3px solid #d4b276;outline-offset:3px}
+.payment-note{font-size:.85rem;line-height:1.6;color:#637b6d;margin-bottom:0}.payment-customer{display:grid;gap:18px;margin-top:24px}.payment-customer label{display:grid;gap:8px;font-weight:600}
+.payment-customer input{font:inherit;border:1px solid #bbd3c4;padding:14px;border-radius:8px;width:100%;box-sizing:border-box;color:#123f30}
+.payment-eyebrow{font-size:.7rem;letter-spacing:.12em;color:#087b50;font-weight:800}.payment-account h2{margin:8px 0 20px}.payment-items article{padding:14px 0;border-top:1px solid #e3ece6}.payment-items article>div{display:flex;justify-content:space-between;gap:18px}.payment-items article>div>span{white-space:nowrap}.payment-items small{display:block;color:#627b6e;margin-top:8px}
+.payment-total{border-top:2px solid #d6e5dc;padding-top:20px;margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:16px}.payment-total strong{font-size:1.5rem}
+.salon-payment>footer{display:flex;justify-content:center;gap:16px;padding:14px 24px;background:#073e2f;flex:none}.salon-payment>footer button{min-width:160px}.salon-payment .payment-exit{background:#883e43;border-color:#a76468;color:white}
+.payment-error{background:#fff0ee;color:#922f35;padding:14px 20px;margin:12px 24px;border-radius:9px}.payment-workspace .payment-error{margin:0}
+.payment-receipt{flex:1;min-height:0;overflow:auto;padding:20px;display:flex;align-items:center;flex-direction:column;gap:12px}.payment-receipt img{width:min(480px,100%);height:auto;flex:none;box-shadow:0 12px 35px #123f3017;border-radius:4px}.payment-success{display:flex;align-items:center;gap:8px;color:#087b50;margin:0}
+@media(max-width:750px){.payment-workspace{grid-template-columns:1fr;padding:14px;gap:14px}.salon-payment fieldset,.payment-account{padding:18px}.payment-choices button{padding:12px;font-size:.85rem}.salon-payment>header{padding:14px 18px}.salon-payment>footer{padding:12px}.salon-payment>footer button{min-width:0;flex:1}.payment-success{font-size:.85rem}}

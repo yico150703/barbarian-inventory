@@ -1,0 +1,47 @@
+Pruebas en PostgreSQL temporal con datos ficticios; base real sin modificar.
+
+test_api_cross_store_returns_json_404 (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_api_pending_migration_returns_json_409 (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_empty_store_and_cross_store_ids (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_global_admin_and_assigned_manager (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_missing_migration_fails_cleanly (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_new_records_keep_local_and_same_inventory_date (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_read_queries_and_locks (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_revoked_local_denies_existing_token (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_supplier_history_survives_catalog_change (test_local_scope_integration.LocalScopeIntegrationTests) ... ok
+test_crear_presentacion_fuera_de_venta (test_recipe_editor.RecipeSavingTests) ... ok
+test_directo_rechaza_multiples_ingredientes (test_recipe_editor.RecipeSavingTests) ... ok
+test_editar_conserva_precio_y_registra_auditoria (test_recipe_editor.RecipeSavingTests) ... ok
+test_fallo_auditoria_revierte_todo (test_recipe_editor.RecipeSavingTests) ... ok
+test_guardado_exige_permiso_de_escritura (test_recipe_editor.RecipeSavingTests) ... ok
+test_porcionado_conserva_varios_ingredientes (test_recipe_editor.RecipeSavingTests) ... ok
+test_receta_no_encontrada (test_recipe_editor.RecipeSavingTests) ... ok
+test_tipo_compartido_no_rompe_otras_presentaciones (test_recipe_editor.RecipeSavingTests) ... ok
+test_unidad_no_habilitada_rechazada (test_recipe_editor.RecipeSavingTests) ... ok
+test_cantidades_invalidas (test_recipe_editor.RecipeValidationTests) ... ok
+test_cantidades_validas (test_recipe_editor.RecipeValidationTests) ... ok
+test_no_acepta_productos_de_carta_ni_duplicados (test_recipe_editor.RecipeValidationTests) ... ok
+test_opciones_desactivadas (test_recipe_editor.RecipeValidationTests) ... ok
+test_preserva_subproducto_inactivo_existente (test_recipe_editor.RecipeValidationTests) ... ok
+test_salsas_limite_y_repeticion (test_recipe_editor.RecipeValidationTests) ... ok
+test_unidad_procede_de_inventario (test_recipe_editor.RecipeValidationTests) ... ok
+test_catalogo_rechaza_limites_sin_escribir (test_stock_limits.StockLimitsTests) ... ok
+test_consultas_compatibles_antes_de_migrar (test_stock_limits.StockLimitsTests) ... ok
+test_exige_sesion (test_stock_limits.StockLimitsTests) ... ok
+test_fallo_auditoria_revierte_cambio (test_stock_limits.StockLimitsTests) ... ok
+test_gerente_necesita_permiso_vigente (test_stock_limits.StockLimitsTests) ... ok
+test_gerente_puede_consultar (test_stock_limits.StockLimitsTests) ... ok
+test_guardar_registra_auditoria_y_confirma (test_stock_limits.StockLimitsTests) ... ok
+test_limites_invalidos_no_escriben (test_stock_limits.StockLimitsTests) ... ok
+test_local_del_token_prevalece_sobre_query_string (test_stock_limits.StockLimitsTests) ... ok
+test_local_invalido_denegado (test_stock_limits.StockLimitsTests) ... ok
+test_local_no_asignado_denegado (test_stock_limits.StockLimitsTests) ... ok
+test_minimo_operativo_usa_local_sesion (test_stock_limits.StockLimitsTests) ... ok
+test_no_se_puede_enviar_otro_local (test_stock_limits.StockLimitsTests) ... ok
+test_otros_perfiles_denegados_incluso_con_permiso_accidental (test_stock_limits.StockLimitsTests) ... ok
+test_validacion (test_stock_limits.StockLimitsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 40 tests in 1.742s
+
+OK

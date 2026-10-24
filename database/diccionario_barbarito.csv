@@ -1,0 +1,6 @@
+posicion;columna;tipo_dato;longitud;precision;escala;permite_null;valor_predeterminado
+1;id_subproducto_detalle;integer;;32;0;NO;
+2;id_subproducto;integer;;32;0;NO;
+3;id_producto;integer;;32;0;NO;
+4;cantidad;numeric;;12;3;NO;
+5;unidad;character varying;10;;;NO;

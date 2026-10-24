@@ -1,0 +1,41 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node dependencies and build output
+node_modules/
+dist/
+frontend/dist/
+
+# Local databases, exports, and logs
+*.backup
+!/database/barbarito_completa_20261010.backup
+*.dump
+*.sqlite
+*.sqlite3
+*.db
+*.log
+/database/barbarito.sql
+/database/barbarito_portable.backup
+/database/normalizacion/auditoria_actual.json
+/database/revision_esquema_20260922.json
+/debug.log
+
+# Temporary test databases and private packaging from the PostgreSQL attempt
+/backend/.demo_backups/
+/backend/.test_local_scope/
+/Barbarito-portable-*.zip
+/INICIAR_BARBARITO.bat
+/EMPAQUETAR_BARBARITO.ps1
+/database/RESTAURAR_BARBARITO.ps1
+/database/GUIA_PC_NUEVO.md

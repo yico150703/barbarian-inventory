@@ -1,0 +1,47 @@
+.profile-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgb(3 34 25 / 70%);
+}
+
+.profile-dialog {
+  width: min(620px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 28px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 28%);
+}
+
+.profile-dialog h2 { margin: 0 0 6px; color: #073f2e; }
+.profile-dialog > p { margin: 0 0 20px; color: #687a74; }
+.profile-dialog__options { display: grid; gap: 10px; }
+.profile-dialog__options button {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d5e1dc;
+  border-radius: 12px;
+  text-align: left;
+  color: #173f33;
+  background: #f8fbf9;
+  cursor: pointer;
+}
+.profile-dialog__options button.is-active {
+  border-color: #17b86b;
+  background: #eafaf2;
+}
+.profile-dialog__options span { color: #66766f; font-size: 13px; }
+.profile-dialog__puesto { display: grid; gap: 7px; margin-top: 18px; font-weight: 700; }
+.profile-dialog__puesto select { padding: 11px; border: 1px solid #ccd9d3; border-radius: 9px; }
+.profile-dialog__error { margin-top: 12px !important; color: #b42318 !important; }
+.profile-dialog__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+.profile-dialog__actions button { padding: 10px 18px; border: 0; border-radius: 9px; cursor: pointer; }
+.profile-dialog__actions button:last-child { color: #fff; background: #087a4d; }
+.profile-dialog__actions button:disabled { opacity: .55; cursor: not-allowed; }

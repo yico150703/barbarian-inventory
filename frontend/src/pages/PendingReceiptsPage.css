@@ -1,0 +1,24 @@
+.receipt-page { display:flex; flex-direction:column; gap:20px; color:#073d2b; }
+.receipt-header { padding:35px 45px; border-radius:25px; color:#fff; background:linear-gradient(110deg,#003b29,#087243); }
+.receipt-header span { color:#2ce07c; font-size:12px; font-weight:900; letter-spacing:.18em; }
+.receipt-header h1 { margin:10px 0 7px; font-size:clamp(32px,4vw,50px); }
+.receipt-header p { margin:0; color:#d5e8df; }
+.receipt-message { padding:14px 18px; border-radius:12px; }
+.receipt-message.ok { color:#087641; background:#e5f9ef; border:1px solid #96e5bd; }
+.receipt-message.error { color:#b62929; background:#fff0f0; border:1px solid #f2b5b5; }
+.receipt-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; }
+.receipt-summary article { padding:20px; display:flex; flex-direction:column; border-radius:16px; background:#fff; border:1px solid #e0e8e3; }
+.receipt-summary strong { font-size:28px; }
+.receipt-summary span { color:#75847c; }
+.receipt-list { overflow:hidden; border-radius:18px; background:#fff; border:1px solid #dce6e0; }
+.receipt-row { width:100%; padding:18px; display:grid; grid-template-columns:auto 110px 1fr 150px auto; align-items:center; gap:12px; border:0; border-bottom:1px solid #e4ebe7; color:#073d2b; background:#fff; text-align:left; cursor:pointer; }
+.receipt-detail { padding:20px; background:#f2f8f5; }
+.receipt-fields { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.receipt-fields label { display:flex; flex-direction:column; gap:7px; font-weight:800; }
+.receipt-fields input,.receipt-products input { min-height:42px; padding:0 12px; border:1px solid #cbd9d1; border-radius:10px; font:inherit; }
+.receipt-products { margin-top:17px; display:flex; flex-direction:column; gap:9px; }
+.receipt-products > div { padding:12px; display:grid; grid-template-columns:1fr 2fr 150px; align-items:center; gap:12px; border-radius:11px; background:#fff; }
+.receipt-products small { color:#728078; }
+.receipt-save { margin-top:18px; min-height:45px; padding:0 20px; border:0; border-radius:10px; color:#fff; background:#06432f; font-weight:900; cursor:pointer; }
+.receipt-empty,.receipt-state { padding:45px; color:#74827a; text-align:center; background:#fff; }
+@media(max-width:760px){.receipt-summary,.receipt-fields{grid-template-columns:1fr}.receipt-row{grid-template-columns:auto 1fr auto}.receipt-row span{grid-column:2}.receipt-products>div{grid-template-columns:1fr}.receipt-header{padding:28px 24px}}
